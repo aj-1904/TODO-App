@@ -1,0 +1,95 @@
+<html>
+  <head>
+    <title><%= title %></title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+    <link rel="stylesheet" href="/css/home.css" />
+  </head>
+  <body>
+    <!-- Heading -->
+    <h1 id="page-heading"><i class="fas fa-th-list"></i>TODO App</h1>
+
+    <!-- Form Container -->
+    <div id="form-container">
+      <p>Plan Your Day!!</p>
+      <!-- Form Details -->
+      <form action="/action/create-task" method="POST">
+        <ul>
+          <li>
+            <!-- Description -->
+            <label for="description">Description</label>
+            <input
+              type="text"
+              name="description"
+              id="description"
+              placeholder="What do you need to do?"
+              required
+            />
+          </li>
+          <li>
+            <!-- Category -->
+            <label for="category">Category</label>
+            <select name="category" id="category" required>
+              <option value="">--Choose a Category--</option>
+              <option value="personal">Personal</option>
+              <option value="work">Work</option>
+              <option value="study">Study</option>
+              <option value="workout">Workout</option>
+              <option value="sports">Sports</option>
+            </select>
+          </li>
+          <li>
+            <!-- Date -->
+            <label for="date">Due Date</label>
+            <input type="date" name="date" id="date" />
+          </li>
+          <!-- Action buttons -->
+          <div class="buttons">
+            <!-- Add button  -->
+            <button type="submit" id="add-button" class="action-buttons">
+              <i class="fas fa-plus"></i>
+              Add Task
+            </button>
+
+            <!-- Delete button -->
+            <button
+              type="submit"
+              id="delete-button"
+              class="action-buttons"
+              form="tasks-list-form"
+            >
+              <i class="fas fa-trash-alt"></i>
+              Delete Tasks
+            </button>
+          </div>
+        </ul>
+      </form>
+    </div>
+
+    <!-- This will show list of all tasks stored in database -->
+    <form action="/action/delete-tasks" method="POST" id="tasks-list-form">
+      <% for (let i of task_list) { %>
+      <div>
+        <div class="horizontal-line"></div>
+        <div class="task">
+          <input type="checkbox" id="checkbox" name="id" value="<%= i._id %>" />
+          <div class="task-data">
+            <p><%= i.description %></p>
+            <i class="fas fa-calendar-alt"></i>
+            <span> <%= i.date %> </span>
+          </div>
+          <button
+            type="button"
+            style="background-color: <%= color_list[i.category] %>"
+          >
+            <%= i.category %>
+          </button>
+        </div>
+      </div>
+      <% } %>
+    </form>
+    <script type="text/javascript" src="/js/home.js"></script>
+  </body>
+</html>

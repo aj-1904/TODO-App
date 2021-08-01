@@ -1,0 +1,205 @@
+/* Root - containing variables for background color and font */
+:root {
+  --bg-color: #b4aee8;
+  --font: cursive;
+}
+
+/* Set properties for body */
+body {
+  margin: 50px auto;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: var(--bg-color);
+  font-family: var(--font);
+  height: auto;
+  width: 60%;
+  border: 3px solid black;
+}
+
+/* Heading */
+#page-heading {
+  font-size: 2.5rem;
+  margin-top: 2rem;
+  text-align: center;
+}
+
+#page-heading i {
+  padding-right: 1rem;
+}
+
+/* Set propertied for form-container */
+#form-container {
+  border: 2px solid black;
+  margin: 20px;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  background-color: #fcd5ce;
+}
+
+#form-container p {
+  font-size: 1.5rem;
+  color: #5b6d5b;
+  font-weight: 700;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+/* Form for Description,Category and Date */
+form {
+  width: 100%;
+}
+
+form ul {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+form ul li {
+  list-style: none;
+}
+
+/* Properties for Labels */
+form ul li label {
+  margin: 5px;
+}
+
+/*Properties for Input and select*/
+input,
+select {
+  display: block;
+  margin-top: 10px;
+  padding: 10px;
+  font-size: 16px;
+  font-family: var(--font);
+  border: none;
+  outline: none;
+}
+
+input:hover,
+select:hover {
+  box-shadow: 10px 10px 30px -10px #192824;
+}
+
+input[type="text"] {
+  text-transform: capitalize;
+}
+
+input[type="text"],
+input[type="date"] {
+  width: 80%;
+  box-sizing: border-box;
+  margin-bottom: 10px;
+}
+
+li select {
+  margin-bottom: 10px;
+  width: 80%;
+  min-width: fit-content;
+}
+
+/* Properties for buttons */
+.buttons {
+  display: flex;
+  justify-content: space-evenly;
+  margin-right: 40px;
+}
+
+.action-buttons {
+  margin-top: 10px;
+  padding: 10px;
+  cursor: pointer;
+  text-align: center;
+  font-family: var(--font);
+  font-weight: 600;
+  font-size: 14px;
+  outline: none;
+  text-decoration: none;
+}
+
+.action-buttons:hover {
+  box-shadow: 10px 10px 30px -10px #192824;
+}
+
+/* Properties for add button */
+#add-button {
+  background-color: lightgreen;
+}
+
+/* Properties for delete button */
+#delete-button {
+  background-color: orangered;
+}
+
+#add-button:active,
+#delete-button:active {
+  background-color: goldenrod;
+}
+
+.action-buttons i {
+  padding-right: 5px;
+}
+
+/* Properties for form when tasks are created */
+#tasks-list-form {
+  box-sizing: border-box;
+  width: auto;
+  height: auto;
+  margin: 0 20px;
+}
+
+/* Creating horizontal line for task created */
+.horizontal-line {
+  width: auto;
+  height: 1px;
+  margin: 10px 10px 10px 0;
+  border-top: 1px solid black;
+}
+
+.task {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.task > * {
+  margin-right: 20px;
+}
+
+.task-data {
+  display: inline-block;
+  width: 80%;
+}
+
+.task-data > * {
+  font-size: 18px;
+}
+
+.task-data p {
+  font-weight: bold;
+  margin-bottom: 10px;
+  text-transform: capitalize;
+}
+
+.task-data i,
+.task-data span {
+  font-size: small;
+  margin-left: 2px;
+}
+
+.task button {
+  border: none;
+  outline: none;
+  height: 40px;
+  width: 100px;
+  margin: auto 10px;
+  text-align: center;
+  font-weight: 500;
+  font-family: var(--font);
+  text-transform: uppercase;
+}
